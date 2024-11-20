@@ -14,22 +14,43 @@ const fetchUsers = async () => {
         method: 'GET',
     };
     try {
+        const section = document.getElementById('section');
+        const response = await fetch("https://jsonplaceholder.typicode.com/users", requestOptions)
+        const data = await response.json();
+        data.forEach(user => {
+            const userDiv = document.createElement('div');
+            const userName = document.createElement('p');
+            const activeCircle = document.createElement('div');
+            activeCircle.classList.add('active-circle');
+            userDiv.classList.add('user');
+            userName.innerHTML = user.name;
+            userDiv.appendChild(userName);
+            userDiv.appendChild(activeCircle);
+            section.appendChild(userDiv);
+        });
+    }
+    catch (error) {
+        console.log('error', error);
+    }
+}
+
+const fetchPosts = async () => {
+    var requestOptions = {
+        method: 'GET',
+    };
+    try {
         const postsContainer = document.getElementById('posts-container');
         const response = await fetch("https://jsonplaceholder.typicode.com/posts", requestOptions)
         const data = await response.json();
         data.forEach(post => {
             const postDiv = document.createElement('div');
-            const postTitle = document.createElement('h2');
+            const postTitle = document.createElement('p');
             const postBody = document.createElement('p');
-
             postDiv.classList.add('post');
-
-            postTitle.innerHTML = post.title;   
-            postBody.innerHTML = post.body; 
-
+            postTitle.innerHTML = post.title;
+            postBody.innerHTML = post.body;
             postDiv.appendChild(postTitle);
             postDiv.appendChild(postBody);
-
             postsContainer.appendChild(postDiv);
         });
     }
@@ -58,4 +79,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     fetchUsers();
+    fetchPosts();
 });
