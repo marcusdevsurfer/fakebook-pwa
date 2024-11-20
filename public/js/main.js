@@ -44,7 +44,7 @@ const fetchPosts = async () => {
         const data = await response.json();
         data.forEach(post => {
             const postDiv = document.createElement('div');
-            const postTitle = document.createElement('p');
+            const postTitle = document.createElement('h2');
             const postBody = document.createElement('p');
             postDiv.classList.add('post');
             postTitle.innerHTML = post.title;
