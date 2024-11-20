@@ -1,10 +1,8 @@
 body {
   font-family: Arial, sans-serif;
-  text-align: center;
   margin: 0;
   padding: 0;
 }
-
 #splash-screen {
   display: flex;
   justify-content: center;
@@ -12,10 +10,32 @@ body {
   height: 100vh;
   background-color: #ffffff;
 }
+.text-white {
+  color: #ffffff;
+}
 .header {
-  background-color: #f1f1f1;
-  padding: 20px;
-  text-align: start; 
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #3b5998;
+  padding: 15px;
+  text-align: start;
+}
+.main{
+  display: flex;
+}
+.posts-container {
+  width: 80%;
+  padding: 2rem;
+}
+.section {
+  width: 20%; 
+  background-color: #f9f9f9;
+}
+.post {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #home-screen {

@@ -10,26 +10,29 @@ if ('serviceWorker' in navigator) {
 }
 
 const fetchUsers = async () => {
-
     var requestOptions = {
         method: 'GET',
     };
-
     try {
-        const posts = document.getElementById('users-list');
+        const postsContainer = document.getElementById('posts-container');
         const response = await fetch("https://jsonplaceholder.typicode.com/posts", requestOptions)
         const data = await response.json();
         data.forEach(post => {
-            const postLi = document.createElement('li');
-            postLi.innerHTML = `Titulo: ${post.title} | Cuerpo: ${post.body}`;
-            posts.appendChild(postLi);
-        });
-        // const dogImage = document.getElementById('dog-image');
-        // // const dogImage2 = document.getElementById('dog-image-2');
-        // dogImage.src = data[0].url;
-        // // dogImage2.src = data[1].url;
-    }
+            const postDiv = document.createElement('div');
+            const postTitle = document.createElement('h2');
+            const postBody = document.createElement('p');
 
+            postDiv.classList.add('post');
+
+            postTitle.innerHTML = post.title;   
+            postBody.innerHTML = post.body; 
+
+            postDiv.appendChild(postTitle);
+            postDiv.appendChild(postBody);
+
+            postsContainer.appendChild(postDiv);
+        });
+    }
     catch (error) {
         console.log('error', error);
     }
