@@ -1,4 +1,4 @@
-Poyecto Final.
+Proyecto Final.
 
 Equipo: Marcus Gonzalez, Cristian Gomez
 Materia: Aplicaciones Web Progresivas
