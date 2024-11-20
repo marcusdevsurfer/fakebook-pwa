@@ -7,13 +7,17 @@ Materia: Aplicaciones Web Progresivas
 Maestro: Dante Noe Magana Ortiz
 
 Instalacion:
-Instalar las dependencias del proyecto.
 
-1- $ npm install
+1- Instalar las dependencias del proyecto.
+
+$ npm install
 
 
-Iniciar servidor express para servir los archivos staticos dentro del proyecto.
+2- Iniciar servidor express para servir los archivos staticos dentro del proyecto.
 
-2- $ npm start
+$ npm start
+
+3- La aplicacion estara corriendo en http://localhost:3000
+
 
 
