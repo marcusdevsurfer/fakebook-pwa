@@ -70,7 +70,7 @@ const subscribeToNotifications = () => {
     const notifyBtn = document.getElementById('notify-btn');
     notifyBtn.addEventListener('click', () => {
         if (Notification.permission === 'granted') {
-            alert('Notificaciones ya están activadas');
+            alert('Notificaciones ya están activadas, aparecerán cada 10 segundos');
             showNotificationWithInterval();
         } else if (Notification.permission !== 'denied') {
             Notification.requestPermission().then(permission => {
